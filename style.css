@@ -1,5 +1,6 @@
 @import url("style/header.css"); /*importa aqui pra não ficar muitos no html*/
 @import url("style/banner.css");
+@import url("style/carrossel.css");
 
 :root{
     --cor-de-fundo: #EBECEE;
