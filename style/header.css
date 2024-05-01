@@ -1,0 +1,62 @@
+.cabeçalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg"); /*esses dois pontos vai permitir pesquisar nas pastas*/
+    background-repeat: no-repeat;/*para não repetir a imagem*/
+    background-position: center;  
+    display: inline-block;/*vai formartar o bloco e não apenas a linha*/
+
+}
+
+.cabeçalho {
+    background-color: var(--branco);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: relative; /*diferente de estatico*/
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1em; /*espaçamento entre as imagens*/
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;/*vai deixar o menur para baixo*/
+    width: 60vw;
+
+}
+
+.container__botao:checked~.lista-menu { 
+     display: block;
+    /*se o container__botao estiver checked, vai procurar outro elemento que venha depois dele, que tenha a classe lista-menu e vai inserir display: block nele*/
+}
+
+.lista-menu__titulo, 
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text; /* esses webkit é para funcionar em outros navegadores*/
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /*essa cor de background vai ficar só onde tem texto*/
+    text-transform: uppercase; /*aqui deixa com letra maiuscula*/
+}
+
+.container__botao {
+    display: none; /*aqui vai tirar o checkbox*/
+}
