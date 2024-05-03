@@ -12,7 +12,7 @@
 
 .tópicos__lista {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* quebra de texto*/
     justify-content: center;
 }
 

@@ -23,7 +23,7 @@
 
 }
 .banner__pesquisa::placeholder{
-    font-family: var(--fonte-principal);
+    font-family: var(--fonte-principal); /*o placeholder não usa a formatação já existente, precisa ser formatado*/
     font-size: 14px;
     font-weight: 400;
     text-align: center;
