@@ -8,6 +8,18 @@
 
 }
 
+/*Usamos vários combinadores CSS. O combinador do til (~)procura algum outro elemento que esteja em seguida dele, que tenha aquela classe. Nesse caso, ele procurou outro elemento que tivesse a classe .container__rotulo, que fosse depois do container__botao. Ele encontrou nosso label.
+
+Depois do label, colocamos um sinal de maoir que (>). Ele procura algo que está dentro desse elemento. Ou seja, Temos um label e dentro dele tem o cabeçalho__menu-hamburguer.*/
+
+.container__botao:checked~.container__rotulo>.cabeçalho__menu-hamburguer{
+    background-image: url("../img/Menu Aberto.svg");
+}
+
+.container__botao:checked~.container__rotulo { /* quando recebe o click, muda a cor de fundo*/
+    background: var(--azul-degrade);
+}
+
 .cabeçalho {
     background-color: var(--branco);
      display: flex;
@@ -56,7 +68,119 @@
     background-clip: text; /*essa cor de background vai ficar só onde tem texto*/
     text-transform: uppercase; /*aqui deixa com letra maiuscula*/
 }
-
+/*
 .container__botao {
-    display: none; /*aqui vai tirar o checkbox*/
+    display: none; /*aqui vai tirar o checkbox ----- fechar esses comentarios individuais
+}
+
+.container__titulo { /* quando menor que 1024 não aparece o alurabooks
+    display: none;
+}
+
+.opções {/* quando em celular não aparece categorias
+    display: none;
+}
+
+.container__texto {/*quando menor que pc não aparecer
+    display: none;
+}
+*/
+.container__botao, .container__titulo, .opções, .container__texto { /*abreviando os de cima*/
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container__titulo,
+    .container__titulo--negrito {
+        font-family: var(--fonte-secundario);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opções {
+        display: flex;
+    }
+
+    .opções__item {
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .opções__link { /*class dos links, tirar a decoração e colorir preto*/
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__imagem-transparente { /*desaparecer o coração quando tela maior*/
+        display: none;
+    }
+
+    .cabeçalho__menu-hamburguer { /*quando for maior desaparecer o menu hamburgue*/
+        display: none;
+    }
+
+    .opções__botão:checked~.lista-menu { /*O CHECKBOX*/
+        display: block;
+        width: auto;
+    }
+
+    .opções__botão { /* ESCONDER O CHECKBOX*/
+        display: none;
+    }
+
+    .opções__botão:checked~.opções__rotulo>.opções__item {
+        background: var(--azul-degrade);
+    }
+
+    .opções__botão:checked~.opções__rotulo>.opções__item {
+        background: var(--azul-degrade);
+        color: var(--branco)
+    }
+
+    .opções__item {
+    padding:2em 1em;
+    }
+
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover>.lista-menu__link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
+}
+
+
+@media screen and (min-width: 1728px) { /*notebook e pc*/
+   
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .cabeçalho {
+        padding: 0 2em;
+    }
+
+    .opções {
+        margin-right: auto; /*como eu coloquei auto na direita ele vai preencher todo o espaço disponivel e consequntemente joga tudo pra esquerda*/
+        margin-left: 2em; /*eu quem coloquei*/
+    }
+    .container__texto{
+        display: block;
+    }
+
 }
